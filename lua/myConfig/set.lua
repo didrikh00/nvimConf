@@ -14,3 +14,18 @@ vim.g.netrw_browse_split = 0 -- Open in previous window
 vim.g.netrw_altv = 1 -- Open splits right
 vim.g.netrw_liststyle = 3 -- Tree style listing
 --vim.opt.winbar = "%f"
+
+
+-- subtle yank highlight
+vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#44475a", blend = 20 })
+vim.api.nvim_create_autocmd("TextYankPost", {
+    group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = "YankHighlight",
+            timeout = 500,
+        })
+    end,
+})
+
+

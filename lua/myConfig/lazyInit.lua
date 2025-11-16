@@ -153,6 +153,35 @@ require("lazy").setup({
     end,
   },
 
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      local ok, gitsigns = pcall (require, "gitsigns")
+      if not ok then 
+        return 
+      end
+      
+      gitsigns.setup({
+      signs = {
+        add = { text = "|" },
+        change = { text = "|" },
+        delete = { text = "_" },
+        topdelete = {text = "‾" },
+        changedelete = {text = "~"},
+      },
+      current_line_blame = false, 
+      current_line_blame_opts = {
+        virt_text = true,
+        virt_text_pos = "eol",
+        delay = 500,
+      },
+      watch_gitdir = {
+        interval = 1000,
+      },
+    })
+  end,
+  },
+
 },
 
   {
