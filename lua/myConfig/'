@@ -1,8 +1,0 @@
-../
-myConfig/
-| lazy/
-| init.lua
-| lazyInit.lua
-| remap.lua
-| set.lua
-| remap.lua~

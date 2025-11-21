@@ -1,1 +1,2 @@
-require("myConfig")
+require("myConfig.core")
+require("myConfig.config.lazy")
